@@ -11,7 +11,7 @@ setup()
 }
 build()
 {
-	cp -prvf $PACKAGEDIR/lfs64.patch /tmp/bps/build/
+	cp -prvf $PACKAGEDIR/lfs64.patch /tmp/kly/build/
 	cd $SOURCEDIR
 	patch -Np1 -i ../lfs64.patch 
 	make FTS_LDLIBS="-lfts"

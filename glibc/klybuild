@@ -15,7 +15,7 @@ export CC="gcc"
 setup()
 {
 
-	cp -prvf $PACKAGEDIR/files /tmp/bps/build/
+	cp -prvf $PACKAGEDIR/files /tmp/kly/build/
 	
 	opts=(
         --prefix=/usr

@@ -7,8 +7,8 @@ source="https://github.com/linux-audit/audit-userspace/archive/refs/tags/v$versi
 groups="sys.process"
 setup()
 {
-	cp $PACKAGEDIR/auditd.initd /tmp/bps/build/auditd.initd
-	cp $PACKAGEDIR/auditd.confd /tmp/bps/build/auditd.confd
+	cp $PACKAGEDIR/auditd.initd /tmp/kly/build/auditd.initd
+	cp $PACKAGEDIR/auditd.confd /tmp/kly/build/auditd.confd
 	
 	cd $SOURCEDIR
 	 autoreconf -fv --install

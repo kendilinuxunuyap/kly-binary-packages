@@ -9,8 +9,8 @@ group="sys.apps"
 
 
 setup(){
-	mkdir -p /tmp/bps/build/files
-	cp ${dizin}/${paket}/files/* /tmp/bps/build/files/
+	mkdir -p /tmp/kly/build/files
+	cp ${dizin}/${paket}/files/* /tmp/kly/build/files/
 	
     cd $SOURCEDIR
     autoreconf -fvi

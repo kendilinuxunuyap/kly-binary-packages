@@ -28,7 +28,7 @@ get_grub_opt(){
 
 
 setup(){
-cd /tmp/bps/build
+cd /tmp/kly/build
  echo depends bli part_gpt > $SOURCEDIR/grub-core/extra_deps.lst
     for tgt in ${uses[@]} ; do
        # if ! use $tgt ; then

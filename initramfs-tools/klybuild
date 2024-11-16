@@ -7,14 +7,14 @@ source="https://salsa.debian.org/kernel-team/initramfs-tools/-/archive/v$version
 groups="sys.fs"
 setup()
 {	
-	mkdir -p /tmp/bps/build/conf-hooks.d
-	cp ${dizin}/${paket}/conf-hooks.d/* /tmp/bps/build/conf-hooks.d/
-	mkdir -p /tmp/bps/build/patches
-	cp ${dizin}/${paket}/patches/* /tmp/bps/build/patches/
-	cp ${dizin}/${paket}/initramfs-tools.sysconf /tmp/bps/build/initramfs-tools.sysconf
-	cp ${dizin}/${paket}/zzz-busybox /tmp/bps/build/zzz-busybox
-	#cp ${dizin}/${paket}/fsck /tmp/bps/build/fsck
-	cp ${dizin}/${paket}/modules /tmp/bps/build/modules
+	mkdir -p /tmp/kly/build/conf-hooks.d
+	cp ${dizin}/${paket}/conf-hooks.d/* /tmp/kly/build/conf-hooks.d/
+	mkdir -p /tmp/kly/build/patches
+	cp ${dizin}/${paket}/patches/* /tmp/kly/build/patches/
+	cp ${dizin}/${paket}/initramfs-tools.sysconf /tmp/kly/build/initramfs-tools.sysconf
+	cp ${dizin}/${paket}/zzz-busybox /tmp/kly/build/zzz-busybox
+	#cp ${dizin}/${paket}/fsck /tmp/kly/build/fsck
+	cp ${dizin}/${paket}/modules /tmp/kly/build/modules
 
 	
 	cd $SOURCEDIR

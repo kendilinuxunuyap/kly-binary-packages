@@ -7,7 +7,7 @@ source="https://busybox.net/downloads/${name}-${version}.tar.bz2"
 group="sys.base"
 setup()
 {
-	cp -prfv $PACKAGEDIR/files /tmp/bps/build/
+	cp -prfv $PACKAGEDIR/files /tmp/kly/build/
 
 	cd $SOURCEDIR
 	make defconfig

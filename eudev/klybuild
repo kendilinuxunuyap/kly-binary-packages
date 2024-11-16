@@ -7,9 +7,9 @@ source="https://github.com/eudev-project/eudev/releases/download/v3.2.14/${name}
 groups="sys.fs"
 setup()
 {
-	cp ${dizin}/${paket}/eudev.hook /tmp/bps/build/
-	cp ${dizin}/${paket}/eudev.init-bottom /tmp/bps/build/
-	cp ${dizin}/${paket}/eudev.init-top /tmp/bps/build/
+	cp ${dizin}/${paket}/eudev.hook /tmp/kly/build/
+	cp ${dizin}/${paket}/eudev.init-bottom /tmp/kly/build/
+	cp ${dizin}/${paket}/eudev.init-top /tmp/kly/build/
 
 	$SOURCEDIR/configure --prefix=/usr \
           	--bindir=/sbin          \

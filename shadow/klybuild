@@ -7,8 +7,8 @@ depends="pam,libxcrypt,acl,attr"
 group="sys.apps"
 
 setup(){
-	mkdir -p /tmp/bps/build/files
-	cp -prvf $PACKAGEDIR/files/ /tmp/bps/build/
+	mkdir -p /tmp/kly/build/files
+	cp -prvf $PACKAGEDIR/files/ /tmp/kly/build/
 	cd $SOURCEDIR
 	autoreconf -fiv      
         ./configure --prefix=/usr \

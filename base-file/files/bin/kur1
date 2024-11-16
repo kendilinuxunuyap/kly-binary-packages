@@ -176,7 +176,7 @@ done
 chroot /hedef userdel -r live
 
 chroot /hedef mv /bin/su /bin/su-old
-#chroot /hedef /bin/bps -r live-installer
+#chroot /hedef /bin/kly -r live-installer
 cd /hedef/sbin
 rm -f init
 ln -s openrc-init init

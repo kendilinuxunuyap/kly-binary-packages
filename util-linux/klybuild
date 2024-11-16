@@ -8,7 +8,7 @@ buildepend="libcap-ng,python,eudev,sqlite,eudev,cryptsetup,libxcrypt"
 group="sys.apps"
 
 setup(){
-	cp -prvf $PACKAGEDIR/files/ /tmp/bps/build/
+	cp -prvf $PACKAGEDIR/files/ /tmp/kly/build/
 	cd $SOURCEDIR
 	patch -Np1 -i ../files/0001-util-linux-tmpfiles.patch
    
