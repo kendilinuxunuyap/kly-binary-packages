@@ -16,6 +16,8 @@ initsetup(){
 mkdir -p $ROOTBUILDDIR #derleme dizini yoksa oluşturuluyor
 rm -rf $ROOTBUILDDIR/* #içeriği temizleniyor
 cd $ROOTBUILDDIR #dizinine geçiyoruz
+if [ -n "${source}" ]
+then
 wget ${source}
 dowloadfile=$(ls|head -1)
 filetype=$(file -b --extension $dowloadfile|cut -d'/' -f1)
@@ -23,6 +25,7 @@ if [ "${filetype}" == "???" ]; then unzip ${dowloadfile}; else tar -xvf ${dowloa
 director=$(find ./* -maxdepth 0 -type d)
 directorname=$(basename ${director})
 if [ "${directorname}" != "${name}-${version}" ]; then mv $directorname ${name}-${version};fi
+fi
 mkdir -p $BUILDDIR&&mkdir -p $DESTDIR&&cd $BUILDDIR
 cp $PACKAGEDIR/klybuild $ROOTBUILDDIR/
 }
