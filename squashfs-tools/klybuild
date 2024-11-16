@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+version="4.6.1"
+name="squashfs-tools"
+depends="squashfs"
+description="squashfs"
+source="https://github.com/plougher/squashfs-tools/archive/refs/tags/4.6.1.tar.gz"
+groups="app.shell"
+setup()
+{
+	cd $SOURCEDIR/squashfs-tools
+	
+}
+build()
+{
+	local make_options=(
+    GZIP_SUPPORT=1
+    LZ4_SUPPORT=1
+    LZMA_XZ_SUPPORT=1
+    LZO_SUPPORT=1
+    XATTR_SUPPORT=1
+    XZ_SUPPORT=1
+    ZSTD_SUPPORT=1
+  )
+#    -C $name-$version/$name
+  make "${make_options[@]}"
+
+}
+package()
+{
+	#make install DESTDIR=$DESTDIR
+	local make_options=(
+    INSTALL_PREFIX="$DESTDIR/usr"
+    INSTALL_MANPAGES_DIR='$(INSTALL_PREFIX)/share/man/man1'
+    install
+ 
+  )
+   #-C $name-$version/name
+  make "${make_options[@]}"
+  install -vDm 644 $SOURCEDIR/{ACTIONS-README,CHANGES,"README-$version",USAGE*} -t "$DESTDIR/usr/share/doc/$name/"
+
+}
+
+

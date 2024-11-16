@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+version="2.10"
+name="lzo"
+depends=""
+description="squashfs lzo"
+source="https://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz"
+groups="app.shell"
+setup()
+{
+	cd $SOURCEDIR
+  ./configure --prefix=/usr --enable-shared
+ 
+	
+}
+build()
+{
+	make
+  # build minilzo
+  gcc $CPPFLAGS $CFLAGS -fpic -Iinclude/lzo -o minilzo/minilzo.o -c minilzo/minilzo.c
+  gcc $LDFLAGS -shared -o libminilzo.so.0 -Wl,-soname,libminilzo.so.0 minilzo/minilzo.o
+}
+package()
+{
+
+  make DESTDIR="${DESTDIR}" install
+
+  # install minilzo
+  install -m 755 libminilzo.so.0 "${DESTDIR}"/usr/lib
+  install -p -m 644 minilzo/minilzo.h ${DESTDIR}/usr/include/lzo
+  cd "${DESTDIR}"/usr/lib
+  ln -s libminilzo.so.0 libminilzo.so
+
+}
+
+

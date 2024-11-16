@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+name="device-mapper"
+version="1.02.28"
+description="User-land utilities for LVM2 (device-mapper) software"
+source="https://sourceware.org/pub/dm/device-mapper.$version.tgz"
+depends=""
+builddepend=""
+group="sys.fs"
+
+setup(){
+	cd $SOURCEDIR
+	./configure --prefix=/usr \
+		--libdir=/usr/lib64/
+}
+
+build(){
+    make
+}
+
+package() {
+    make install DESTDIR=$DESTDIR
+}
+
+
