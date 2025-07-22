@@ -2,7 +2,7 @@
 version="5.2.21"
 name="bash"
 depends="glibc,readline,ncurses"
-description="GNU/Linux dağıtımında ön tanımlı kabuk"
+description="GNU/Linux dağıtımında ön tanımlı kabuk aracı"
 source="https://ftp.gnu.org/pub/gnu/bash/${name}-${version}.tar.gz"
 groups="app.shell"
 setup()
