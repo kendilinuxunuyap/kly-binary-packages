@@ -20,7 +20,7 @@ jobs:
                 options: -v ${{ github.workspace }}:/root -v /output:/output
                 run: |
                     cd /root
-                    sh index
+                    sh index #indez oluşturan scriptimizin çalıştığı yer 
           - uses: "marvinpinto/action-automatic-releases@latest"
             with:
                 repo_token: "${{ secrets.GITHUB_TOKEN }}"
